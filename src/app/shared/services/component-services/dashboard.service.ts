@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TEST } from 'src/config/api.constants';
+import { AUTHENTICATION, TEST } from 'src/config/api.constants';
 import { HttpService } from '../system-services/http.service';
 
-@Injectable()
+@Injectable(
+  {
+    providedIn:'root'
+  }
+)
 export class DashboardService {
   constructor(private httpService: HttpService) {}
 
@@ -15,4 +19,10 @@ export class DashboardService {
   public testCall(params: any = {}): Observable<any> {
     return this.httpService.get(TEST.TEST, params, false);
   }
+
+  public registerUser(body:any): Observable<any> {
+    return this.httpService.post(AUTHENTICATION.REGISTER, body);
+  }
+
+  
 }

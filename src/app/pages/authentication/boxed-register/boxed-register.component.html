@@ -62,28 +62,28 @@
 
           <div class="or-border m-t-30">or sign up with</div>
 
-          <form class="m-t-30" [formGroup]="form" (ngSubmit)="submit()">
+          <form class="m-t-30" [formGroup]="registerForm" (ngSubmit)="submit()">
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
               >Name</mat-label
             >
             <mat-form-field appearance="outline" class="w-100" color="primary">
-              <input matInput formControlName="uname" />
+              <input matInput formControlName="name" />
               <mat-hint
-                *ngIf="f['uname'].touched && f['uname'].invalid"
+                *ngIf="f['name'].touched && f['name'].invalid"
                 class="m-b-16 error-msg"
               >
                 <div
                   class="text-error"
-                  *ngIf="f['uname'].errors && f['uname'].errors['required']"
+                  *ngIf="f['name'].errors && f['name'].errors['required']"
                 >
                   Name is required.
                 </div>
-                <div
+                <!-- <div
                   class="text-error"
-                  *ngIf="f['uname'].errors && f['uname'].errors['minlength']"
+                  *ngIf="f['name'].errors && f['name'].errors['minlength']"
                 >
                   Name should be 6 character.
-                </div>
+                </div> -->
               </mat-hint>
             </mat-form-field>
             <mat-label class="mat-subtitle-2 f-s-14 f-w-600 m-b-12 d-block"
@@ -124,7 +124,7 @@
               </mat-hint>
             </mat-form-field>
 
-            <button mat-flat-button color="primary" class="w-100" [disabled]="!form.valid">
+            <button mat-flat-button color="primary" class="w-100" >
               Sign Up
             </button>
             <!-- input -->
@@ -133,7 +133,7 @@
             >Already have an Account?
 
             <a
-              [routerLink]="['/authentication/boxed-login']"
+              routerLink="/authentication/login"
               class="text-decoration-none text-primary f-w-500 f-s-14"
             >
               Sign In</a

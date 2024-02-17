@@ -10,6 +10,8 @@ import {
 import { Router, RouterModule } from '@angular/router';
 import { CoreService } from 'src/app/shared/services/core.service';
 import { MaterialModule } from '../../../material.module';
+import { DashboardService } from 'src/app/shared/services/component-services/dashboard.service';
+import { GenerateToasterService } from 'src/app/shared/services/system-services/generate-toaster.service';
 
 @Component({
   selector: 'app-boxed-register',
@@ -26,20 +28,36 @@ import { MaterialModule } from '../../../material.module';
 export class AppBoxedRegisterComponent {
   options = this.settings.getOptions();
 
-  constructor(private settings: CoreService, private router: Router) {}
+  constructor(private settings: CoreService, private router: Router,private dashboardService:DashboardService, private toastrService:GenerateToasterService) {}
 
-  form = new FormGroup({
-    uname: new FormControl('', [Validators.required, Validators.minLength(6)]),
+  registerForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
   });
 
   get f() {
-    return this.form.controls;
+    return this.registerForm.controls;
   }
 
   submit() {
     // console.log(this.form.value);
-    this.router.navigate(['/dashboards/dashboard1']);
+    if (this.registerForm.valid) {
+      this.dashboardService.registerUser(this.registerForm.value).subscribe({
+        next:(res:any)=>{
+          console.log('====User Register successfully====');
+          if(res?.type=='success'){
+            this.toastrService.success(res?.message)
+            this.router.navigate(['/dashboards/dashboard1']);
+          }else{
+            this.toastrService.error(res?.message)
+          }
+        },
+        error:(error:any)=>{
+          this.toastrService.error('register failed')
+        }
+      })
+      
+    }
   }
 }

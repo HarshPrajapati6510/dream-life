@@ -11,5 +11,5 @@ export const TEST = {
 export const AUTHENTICATION = {
   LOGIN: `${API_PREFIX}/login`,
   LOGOUT: `${API_PREFIX}/logout`,
-  SIGN_UP: `${API_PREFIX}/signup`,
+  REGISTER: `${API_PREFIX}/register`,
 };

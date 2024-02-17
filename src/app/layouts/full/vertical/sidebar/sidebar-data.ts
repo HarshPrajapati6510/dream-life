@@ -71,85 +71,75 @@ export const navItems: NavItem[] = [
     iconName: 'chart-radar',
     route: '/charts/radial-radar',
   },
-  {
-    navCap: 'Auth',
-  },
-  {
-    displayName: 'Login',
-    iconName: 'login',
-    route: '/authentication',
-    children: [
-      {
-        displayName: 'Side Login',
-        iconName: 'point',
-        route: '/authentication/side-login',
-      },
-      {
-        displayName: 'Boxed Login',
-        iconName: 'point',
-        route: '/authentication/boxed-login',
-      },
-    ],
-  },
-  {
-    displayName: 'Register',
-    iconName: 'user-plus',
-    route: '/authentication',
-    children: [
-      {
-        displayName: 'Side Login',
-        iconName: 'point',
-        route: '/authentication/side-register',
-      },
-      {
-        displayName: 'Boxed Login',
-        iconName: 'point',
-        route: '/authentication/boxed-register',
-      },
-    ],
-  },
-  {
-    displayName: 'Forgot Password',
-    iconName: 'rotate',
-    route: '/authentication',
-    children: [
-      {
-        displayName: 'Side Forgot Password',
-        iconName: 'point',
-        route: '/authentication/side-forgot-pwd',
-      },
-      {
-        displayName: 'Boxed Forgot Password',
-        iconName: 'point',
-        route: '/authentication/boxed-forgot-pwd',
-      },
-    ],
-  },
-  {
-    displayName: 'Two Steps',
-    iconName: 'zoom-code',
-    route: '/authentication',
-    children: [
-      {
-        displayName: 'Side Two Steps',
-        iconName: 'point',
-        route: '/authentication/side-two-steps',
-      },
-      {
-        displayName: 'Boxed Two Steps',
-        iconName: 'point',
-        route: '/authentication/boxed-two-steps',
-      },
-    ],
-  },
-  {
-    displayName: 'Error',
-    iconName: 'alert-circle',
-    route: '/authentication/error',
-  },
-  {
-    displayName: 'Maintenance',
-    iconName: 'settings',
-    route: '/authentication/maintenance',
-  },
+  // {
+  //   navCap: 'Auth',
+  // },
+  // {
+  //   displayName: 'Login',
+  //   iconName: 'login',
+  //   route: '/authentication',
+  //   children: [
+  //     {
+  //       displayName: 'Boxed Login',
+  //       iconName: 'point',
+  //       route: '/authentication/boxed-login',
+  //     },
+  //   ],
+  // },
+  // {
+  //   displayName: 'Register',
+  //   iconName: 'user-plus',
+  //   route: '/authentication',
+  //   children: [
+  //     {
+  //       displayName: 'Boxed Login',
+  //       iconName: 'point',
+  //       route: '/authentication/boxed-register',
+  //     },
+  //   ],
+  // },
+  // {
+  //   displayName: 'Forgot Password',
+  //   iconName: 'rotate',
+  //   route: '/authentication',
+  //   children: [
+  //     {
+  //       displayName: 'Side Forgot Password',
+  //       iconName: 'point',
+  //       route: '/authentication/side-forgot-pwd',
+  //     },
+  //     {
+  //       displayName: 'Boxed Forgot Password',
+  //       iconName: 'point',
+  //       route: '/authentication/boxed-forgot-pwd',
+  //     },
+  //   ],
+  // },
+  // {
+  //   displayName: 'Two Steps',
+  //   iconName: 'zoom-code',
+  //   route: '/authentication',
+  //   children: [
+  //     {
+  //       displayName: 'Side Two Steps',
+  //       iconName: 'point',
+  //       route: '/authentication/side-two-steps',
+  //     },
+  //     {
+  //       displayName: 'Boxed Two Steps',
+  //       iconName: 'point',
+  //       route: '/authentication/boxed-two-steps',
+  //     },
+  //   ],
+  // },
+  // {
+  //   displayName: 'Error',
+  //   iconName: 'alert-circle',
+  //   route: '/authentication/error',
+  // },
+  // {
+  //   displayName: 'Maintenance',
+  //   iconName: 'settings',
+  //   route: '/authentication/maintenance',
+  // },
 ];
